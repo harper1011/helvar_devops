@@ -1,0 +1,20 @@
+branch-defaults:
+  master:
+    environment: develop-env
+environment-defaults:
+  develop-env:
+    branch: null
+    repository: null
+global:
+  application_name: helvar_devops
+  branch: null
+  default_ec2_keyname: null
+  default_platform: docker
+  default_region: eu-central-1
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: eb-cli
+  repository: null
+  sc: git
+  workspace_type: Application
