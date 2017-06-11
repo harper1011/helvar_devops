@@ -10,7 +10,8 @@ dependencies:
   pre:
     # install eb in CircleCI env
     - sudo apt-get update; sudo apt-get install python2.7-dev
-    - sudo pip install awsebcli six
+    - sudo pip install awsebcli
+    - sudo pip install six
   override:
     - docker build -t helvar_devops .
 
