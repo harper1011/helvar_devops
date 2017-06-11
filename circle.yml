@@ -2,7 +2,7 @@
 machine:
   # add python support for install eb
   python:
-    version: 2.7
+    version: 2.7.12
   services:
     - docker
 
