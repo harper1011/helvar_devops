@@ -12,7 +12,6 @@ dependencies:
     - sudo apt-get update; sudo apt-get install python2.7-dev
     - sudo pip install --upgrade pip
     - sudo pip install awsebcli --upgrade
-    - sudo pip install six --upgrade
   override:
     - docker build -t helvar_devops .
 
@@ -28,4 +27,5 @@ deployment:
   production:
     branch: master
     commands:
+      - eb init -p docker
       - eb deploy develop-env
