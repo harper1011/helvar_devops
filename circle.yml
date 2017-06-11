@@ -1,4 +1,16 @@
 # circle.yml
 machine:
-  python:
-    version: 2.7.12
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker build -t helvar_devops .
+
+test:
+  override:
+    # local test
+    - python /helvar_devops/tst/test_basic.py
+    # docker container test
+    - docker run -p 3000:3000 --name testdemo -d helvar_devops; sleep 10
+    - curl --retry 10 --retry-delay 5 -v http://localhost:3000
